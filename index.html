@@ -5,10 +5,37 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Rock, Paper, Scissors</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body {
+                background: linear-gradient(#F7CDE1, #97F7F5);
+                height: 100%;
+                margin: 0;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                text-align: center;
+                color: #530780;
+                font-size: 300%;
+            }
+
+            /* section {
+                text-align: center;
+            } */
+
+            button {
+                background-color: #530780;
+                color: #97F7F5;
+                font-size: larger;
+                padding: 10px;
+                border-radius: 20px;
+            }
+        </style>
     </head>
     <body>
         <h1 class="h1" hidden>Thanks for playing!</h1>
-        
+        <section id="game">
+            <h2>Would you like to play Rock, Paper, Scissors?</h2>
+            <button onclick="playRPS()">Play now!</button>
+        </section>
         <script src="./script.js" async defer></script>
     </body>
 </html>

@@ -13,13 +13,19 @@ function playRPS() {
     
     //Set global variable and function to use when player hits cancel
     var h1 = document.querySelector(".h1");
-    function show() {
+    function showExitMessage() {
         h1.removeAttribute("hidden");
+    };
+   
+    // Hide the h2 and button when the game ends
+    function hideGame() {
+        document.getElementById("game").style.display = "none";
     };
 
     //If user hits cancel, show the hidden text, and exits the game
     if (gameChoice === null) {
-        show();
+        showExitMessage();
+        hideGame();
         return;
     }
     
@@ -38,7 +44,7 @@ function playRPS() {
          window.alert("Please choose R, P, or S only");
          playRPS();
     }
-
+    
     // If choices are the same, it's a tie
     if (gameChoice === compChoice) {
         ties++;
@@ -71,13 +77,11 @@ function playRPS() {
     if (playAgain) {
         playRPS();
     } else { //Show hidden text and exit game
-        show(); //function from earlier
+        showExitMessage();
+        hideGame(); //functions from earlier
         return;
     }
 };
-
-//Launch game to start
-playRPS();
 
 
 
