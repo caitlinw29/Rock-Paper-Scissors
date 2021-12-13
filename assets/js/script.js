@@ -6,21 +6,22 @@ var wins = 0;
 var losses = 0;
 var ties = 0;
 
-//Game function
+const playNowBtn = document.getElementById("playNow");
+const thanksForPlaying = document.getElementById("thanksForPlaying");
+
+ //Set function to use when player hits cancel
+function showExitMessage() {
+    thanksForPlaying.classList.remove("hidden");
+};
+
+// Hide the h1 and button when the game ends
+function hideGame() {
+    document.getElementById("game").classList.add("hidden");
+};
+
 function playRPS() {
     //Ask user for their choice
     var gameChoice = window.prompt("Choose R, P, or S:");
-    
-    //Set global variable and function to use when player hits cancel
-    var h1 = document.querySelector(".h1");
-    function showExitMessage() {
-        h1.removeAttribute("hidden");
-    };
-   
-    // Hide the h2 and button when the game ends
-    function hideGame() {
-        document.getElementById("game").style.display = "none";
-    };
 
     //If user hits cancel, show the hidden text, and exits the game
     if (gameChoice === null) {
@@ -28,7 +29,7 @@ function playRPS() {
         hideGame();
         return;
     }
-    
+
     //Convert user input to uppercase
     gameChoice = gameChoice.toUpperCase();
 
@@ -41,10 +42,10 @@ function playRPS() {
         //Show computer choice
         window.alert("The computer chose " + compChoice);
     } else { //Only accept r, p, s. Also detects if user trys to submit blank field
-         window.alert("Please choose R, P, or S only");
-         playRPS();
+        window.alert("Please choose R, P, or S only");
+        playRPS();
     }
-    
+
     // If choices are the same, it's a tie
     if (gameChoice === compChoice) {
         ties++;
@@ -57,8 +58,8 @@ function playRPS() {
     ) {
         wins++;
         window.alert("You win!");
-    
-      
+
+        
     } else {
         // If user didn't win, they lost.
         losses++;
@@ -68,7 +69,7 @@ function playRPS() {
     //Show Stats
     window.alert(
         "Stats:\nWins: " + wins + "\nLosses: " + losses + "\nTies: " + ties
-        );
+    );
 
     //Ask user to play again
     var playAgain = window.confirm("Play again?");
@@ -78,10 +79,12 @@ function playRPS() {
         playRPS();
     } else { //Show hidden text and exit game
         showExitMessage();
-        hideGame(); //functions from earlier
+        hideGame(); 
         return;
     }
 };
+
+playNowBtn.addEventListener("click", playRPS);
 
 
 

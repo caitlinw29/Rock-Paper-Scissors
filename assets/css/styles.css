@@ -1,0 +1,22 @@
+body {
+  background: linear-gradient(#F7CDE1, #97F7F5);
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  text-align: center;
+  color: #530780;
+  font-size: 300%;
+}
+
+button {
+  background-color: #530780;
+  color: #97F7F5;
+  font-size: larger;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.hidden {
+  display: none;
+}
