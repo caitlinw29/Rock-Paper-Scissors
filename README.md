@@ -5,7 +5,7 @@
 
 * Rock beats scissors, scissors beats paper, and paper beats rock.
 
-* See page at https://caitlinw29.github.io/Rock-Paper-Scissors/
+* See page at [Rock, Paper, Scissors](https://caitlinw29.github.io/Rock-Paper-Scissors/)
 
 ## Instructions
 
